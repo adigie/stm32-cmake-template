@@ -97,3 +97,9 @@ add_custom_target(bin
             $<TARGET_FILE:${PROJECT_NAME}>
             ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.bin
 )
+
+add_custom_command(TARGET ${PROJECT_NAME}
+    POST_BUILD
+        COMMAND
+            ${CMAKE_SIZE_UTIL} --format=sysv --radix=16 $<TARGET_FILE:${PROJECT_NAME}>
+)
