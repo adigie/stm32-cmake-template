@@ -8,11 +8,11 @@
             "cwd": "${workspaceRoot}",
             "executable": "./build/template.elf",
             "name": "Debug (J-Link)",
-            //"device": "",
+            "device": "STM32L053C8",
             "interface": "swd",
             "ipAddress": null,
             "serialNumber": null,
-            // "svdFile": "",
+            "svdFile": "./STM32L053x.svd",
             "postLaunchCommands": [
                 "b main",
                 "continue",
