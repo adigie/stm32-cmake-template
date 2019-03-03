@@ -7,6 +7,8 @@ else()
     message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 endif()
 
+message(STATUS "CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
+
 project(template C CXX ASM)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

@@ -13,7 +13,6 @@
             "ipAddress": null,
             "serialNumber": null,
             // "svdFile": "",
-            "preLaunchTask": "build",
             "postLaunchCommands": [
                 "b main",
                 "continue",
