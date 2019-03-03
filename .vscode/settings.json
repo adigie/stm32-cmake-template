@@ -1,0 +1,11 @@
+{
+    "cmake.buildDirectory": "${workspaceRoot}/build",
+    "cmake.buildArgs": [
+        "--parallel"
+    ],
+    "cmake.autoRestartBuild": true,
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.workspaceParsingPriority": "medium",
+}

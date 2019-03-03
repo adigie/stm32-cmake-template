@@ -1,0 +1,11 @@
+*.jdebug.user
+
+/.idea/
+/build/
+
+/.vscode/*
+!/.vscode/cmake-kits.json
+!/.vscode/launch.json
+!/.vscode/settings.json
+!/.vscode/tasks.json
+

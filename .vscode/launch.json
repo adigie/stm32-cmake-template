@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/template.elf",
+            "name": "Debug (J-Link)",
+            //"device": "",
+            "interface": "swd",
+            "ipAddress": null,
+            "serialNumber": null,
+            // "svdFile": "",
+            "preLaunchTask": "build",
+            "postLaunchCommands": [
+                "b main",
+                "continue",
+            ],
+        },
+    ]
+}
