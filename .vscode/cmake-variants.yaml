@@ -10,3 +10,17 @@ buildType:
       short: Release
       long: Os optimization
       buildType: Release
+
+rtt:
+  default: 'off'
+  choices:
+    'on':
+      short: RTT
+      long: Enable RTT logs
+      settings:
+        RTT_LOG: ON
+    'off':
+      short: No RTT
+      long: Disable RTT logs
+      settings:
+        RTT_LOG: OFF

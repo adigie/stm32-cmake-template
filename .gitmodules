@@ -1,0 +1,3 @@
+[submodule "libs/rtt/segger-rtt"]
+	path = libs/rtt/segger-rtt
+	url = https://github.com/adigie/segger-rtt.git
