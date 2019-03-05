@@ -1,0 +1,12 @@
+buildType:
+  default: debug
+  description: Build type
+  choices:
+    debug:
+      short: Debug
+      long: Og optimization
+      buildType: Debug
+    release:
+      short: Release
+      long: Os optimization
+      buildType: Release
