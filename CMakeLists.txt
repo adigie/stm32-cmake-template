@@ -13,6 +13,8 @@ project(template C CXX ASM)
 
 include(cmake/utils.cmake)
 
+option(RTT_LOG "Enable RTT logs" OFF)
+
 add_subdirectory(hal)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
@@ -67,6 +69,15 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE
         ${PROJECT_NAME}-hal
 )
+
+if(RTT_LOG)
+    add_subdirectory(libs/rtt)
+    target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+            rtt
+    )
+endif()
+
 
 target_link_options(${PROJECT_NAME}
     PRIVATE

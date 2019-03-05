@@ -1,3 +1,6 @@
 [submodule "cmsis-svd"]
 	path = cmsis-svd
 	url = https://github.com/posborne/cmsis-svd.git
+[submodule "libs/rtt/segger-rtt"]
+	path = libs/rtt/segger-rtt
+	url = https://github.com/adigie/segger-rtt.git
