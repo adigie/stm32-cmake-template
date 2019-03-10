@@ -11,6 +11,8 @@ message(STATUS "CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
 project(template C CXX ASM)
 
+include(cmake/utils.cmake)
+
 add_subdirectory(hal)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
@@ -71,28 +73,6 @@ target_link_options(${PROJECT_NAME}
         -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map,--cref
 )
 
-add_custom_target(hex
-    ALL
-    DEPENDS
-        ${PROJECT_NAME}
-    COMMAND
-        ${CMAKE_OBJCOPY} -O ihex
-            $<TARGET_FILE:${PROJECT_NAME}>
-            ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.hex
-)
-
-add_custom_target(bin
-    ALL
-    DEPENDS
-        ${PROJECT_NAME}
-    COMMAND
-        ${CMAKE_OBJCOPY} -O binary
-            $<TARGET_FILE:${PROJECT_NAME}>
-            ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.bin
-)
-
-add_custom_command(TARGET ${PROJECT_NAME}
-    POST_BUILD
-        COMMAND
-            ${CMAKE_SIZE_UTIL} --format=sysv --radix=16 $<TARGET_FILE:${PROJECT_NAME}>
-)
+utils_target_generate_hex(${PROJECT_NAME})
+utils_target_generate_bin(${PROJECT_NAME})
+utils_target_print_size(${PROJECT_NAME})
