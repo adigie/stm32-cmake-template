@@ -65,7 +65,7 @@ target_compile_options(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
-        hal
+        ${PROJECT_NAME}-hal
 )
 
 target_link_options(${PROJECT_NAME}

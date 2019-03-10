@@ -7,27 +7,27 @@ file(GLOB_RECURSE HAL_SOURCES CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/*.s
 )
 
-add_library(hal OBJECT)
+add_library(${PROJECT_NAME}-hal OBJECT)
 
-target_include_directories(hal
+target_include_directories(${PROJECT_NAME}-hal
     SYSTEM PUBLIC
         #${CMAKE_CURRENT_SOURCE_DIR}/...
 )
 
-target_compile_definitions(hal
+target_compile_definitions(${PROJECT_NAME}-hal
     PUBLIC
         USE_HAL_DRIVER
         #STM32...
 )
 
-target_sources(hal
+target_sources(${PROJECT_NAME}-hal
     PUBLIC
         ${HAL_HEADERS}
     PRIVATE
         ${HAL_SOURCES}
 )
 
-target_link_options(hal
+target_link_options(${PROJECT_NAME}-hal
     PUBLIC
         #-T ${CMAKE_CURRENT_SOURCE_DIR}/linker_script.ld
 )
