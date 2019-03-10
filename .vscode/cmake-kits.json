@@ -1,7 +1,7 @@
 [
     {
         "name": "arm-none-eabi-gcc toolchain",
-        "toolchainFile": "toolchain.cmake",
+        "toolchainFile": "${workspaceRoot}/cmake/toolchain.cmake",
         "preferredGenerator": {
             "name": "Unix Makefiles"
         }
