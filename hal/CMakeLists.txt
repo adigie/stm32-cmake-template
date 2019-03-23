@@ -31,7 +31,3 @@ target_sources(${PROJECT_NAME}-hal
         ${HAL_SOURCES}
 )
 
-target_link_options(${PROJECT_NAME}-hal
-    PUBLIC
-        -T ${CMAKE_CURRENT_SOURCE_DIR}/STM32L053C8Tx_FLASH.ld
-)

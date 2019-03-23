@@ -32,3 +32,15 @@ macro(utils_target_print_size TARGET_NAME)
     )
 endmacro()
 
+
+macro(utils_target_set_linker_script TARGET_NAME LINKER_SCRIPT)
+    target_link_options(${TARGET_NAME}
+        PRIVATE
+            -T ${LINKER_SCRIPT}
+    )
+    set_target_properties(${TARGET_NAME}
+        PROPERTIES
+            LINK_DEPENDS
+                ${LINKER_SCRIPT}
+    )
+endmacro()
