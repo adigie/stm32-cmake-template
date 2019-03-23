@@ -73,6 +73,10 @@ target_link_options(${PROJECT_NAME}
         -Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map,--cref
 )
 
+utils_target_set_linker_script(${PROJECT_NAME}
+    ${CMAKE_CURRENT_SOURCE_DIR}/link.ld
+)
+
 utils_target_generate_hex(${PROJECT_NAME})
 utils_target_generate_bin(${PROJECT_NAME})
 utils_target_print_size(${PROJECT_NAME})
