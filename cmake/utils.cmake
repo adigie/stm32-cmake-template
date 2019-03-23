@@ -1,24 +1,26 @@
 macro(utils_target_generate_hex TARGET_NAME)
-    add_custom_target(hex
+    add_custom_target(${TARGET_NAME}-hex
         ALL
-        DEPENDS
-            ${TARGET_NAME}
         COMMAND
             ${CMAKE_OBJCOPY} -O ihex
                 $<TARGET_FILE:${TARGET_NAME}>
                 ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.hex
     )
+    add_dependencies(${TARGET_NAME}-hex
+        ${TARGET_NAME}
+    )
 endmacro()
 
 macro(utils_target_generate_bin TARGET_NAME)
-    add_custom_target(bin
+    add_custom_target(${TARGET_NAME}-bin
         ALL
-        DEPENDS
-            ${TARGET_NAME}
         COMMAND
             ${CMAKE_OBJCOPY} -O binary
                 $<TARGET_FILE:${TARGET_NAME}>
                 ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.bin
+    )
+    add_dependencies(${TARGET_NAME}-hex
+        ${TARGET_NAME}
     )
 endmacro()
 
