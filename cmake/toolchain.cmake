@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.6 FATAL_ERROR)
 
-set(TARGET_CPU "cortex-m0")
+set(TARGET_CPU "cortex-m3")
 
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR ${TARGET_CPU})

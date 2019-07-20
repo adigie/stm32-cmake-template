@@ -85,7 +85,7 @@ target_link_options(${PROJECT_NAME}
 )
 
 utils_target_set_linker_script(${PROJECT_NAME}
-    ${CMAKE_CURRENT_SOURCE_DIR}/link.ld
+    ${CMAKE_CURRENT_SOURCE_DIR}/hal/STM32F103C8Tx_FLASH.ld
 )
 
 utils_target_generate_hex(${PROJECT_NAME})

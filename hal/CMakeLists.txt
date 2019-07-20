@@ -11,13 +11,18 @@ add_library(${PROJECT_NAME}-hal OBJECT)
 
 target_include_directories(${PROJECT_NAME}-hal
     SYSTEM PUBLIC
-        #${CMAKE_CURRENT_SOURCE_DIR}/...
+        ${CMAKE_CURRENT_SOURCE_DIR}/Inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32F1xx_HAL_Driver/Inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32F1xx/Include
+        ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/CMSIS/Include
 )
 
 target_compile_definitions(${PROJECT_NAME}-hal
     PUBLIC
         USE_HAL_DRIVER
-        #STM32...
+        USE_FULL_LL_DRIVER
+        STM32F103xB
 )
 
 target_sources(${PROJECT_NAME}-hal
