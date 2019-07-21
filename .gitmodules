@@ -4,3 +4,6 @@
 [submodule "libs/rtt/segger-rtt"]
 	path = libs/rtt/segger-rtt
 	url = https://github.com/adigie/segger-rtt.git
+[submodule "libs/contiki/contiki"]
+	path = libs/contiki/contiki
+	url = https://github.com/contiki-os/contiki.git

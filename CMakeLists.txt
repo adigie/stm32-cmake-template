@@ -16,6 +16,7 @@ include(cmake/utils.cmake)
 option(RTT_LOG "Enable RTT logs" OFF)
 
 add_subdirectory(hal)
+add_subdirectory(libs/contiki)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h
@@ -68,6 +69,7 @@ target_compile_options(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
         ${PROJECT_NAME}-hal
+        contiki
 )
 
 if(RTT_LOG)
