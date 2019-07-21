@@ -1,15 +1,9 @@
-#include <stdint.h>
-#include <limits.h>
-
 #include <main.h>
 #include <SEGGER_RTT.h>
-//#include <pt.h>
 
 #include <stm32f1xx.h>
 #include <stm32f1xx_ll_bus.h>
 #include <stm32f1xx_ll_gpio.h>
-
-//#include <timer.h>
 
 #include <sys/process.h>
 #include <sys/clock.h>
